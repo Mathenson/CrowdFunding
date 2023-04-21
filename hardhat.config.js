@@ -2,11 +2,20 @@
 module.exports = {
   solidity: {
     version: '0.8.9',
+    defaultNetwork: 'goerli',
+    networks: {
+      hardhat: {},
+      goerli: {
+        url: 'http://rpc.ankr.com/eth_gorli',
+        accounts: [`0x${process.env.PRIVATE_KEY}`]
+        }
+      },
     settings: {
       optimizer: {
         enabled: true,
         runs: 200,
       },
     },
+  
   },
 };
